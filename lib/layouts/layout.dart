@@ -19,7 +19,9 @@ Widget container() {
             borderRadius: BorderRadius.circular(4),
           ),
           // BoxDecoration
-          child: Image.asset('images/dart_icon.png'),
+          child: const Image(
+            image: AssetImage('./lib/assets/images/dart_icon.png'),
+          ),
           // Image.network('https://picsum.photos/64/64'), // Stockimage
           margin: const EdgeInsets.all(4)));
 }
