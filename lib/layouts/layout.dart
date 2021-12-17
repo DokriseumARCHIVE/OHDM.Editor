@@ -17,7 +17,9 @@ Widget container() {
             border:
                 Border.all(color: const Color(0xffffff00), width: 8), // Border
             borderRadius: BorderRadius.circular(4),
-          ), // BoxDecoration
-          child: Image.network('https://picsum.photos/64/64'), // Stockimage
+          ),
+          // BoxDecoration
+          child: Image.asset('images/dart_icon.png'),
+          // Image.network('https://picsum.photos/64/64'), // Stockimage
           margin: const EdgeInsets.all(4)));
 }
