@@ -87,7 +87,7 @@ class _SuperHeroName extends State<SuperHeroNameGenerator> {
             title: Text(_superHeroName),
           ),
           body: Center(
-            child: Image.network('https://picsum.photos/200/300')
+            child: Image.network('https://picsum.photos/1080/1920')
           ),
         );
       })
