@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:postgres/postgres.dart';
 import 'package:super_hero/super_hero.dart';
-
 
 void main() => runApp(OHDMEditor());
 
@@ -44,9 +42,8 @@ class _SuperHeroName extends State<SuperHeroNameGenerator> {
           if (i ~/ 2 >= _superHeroNames.length) {
             _superHeroNames.addAll(_generateSuperheroNames());
           }
-          return _buildRow(_superHeroNames[i ~/2]);
-        }
-    );
+          return _buildRow(_superHeroNames[i ~/ 2]);
+        });
   }
 
   Iterable<String> _generateSuperheroNames() {
@@ -69,7 +66,9 @@ class _SuperHeroName extends State<SuperHeroNameGenerator> {
       ),
       onTap: () {
         setState(() {
-          _markedFav ? _hearted.remove(superHeroName) : _hearted.add(superHeroName);
+          _markedFav
+              ? _hearted.remove(superHeroName)
+              : _hearted.add(superHeroName);
         });
       },
       onLongPress: () {
@@ -79,18 +78,27 @@ class _SuperHeroName extends State<SuperHeroNameGenerator> {
   }
 
   void _pushExample(String superHeroName) {
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(builder: (BuildContext context) {
-        final _superHeroName = superHeroName;
-        return Scaffold(
-          appBar: AppBar(
-            title: Text(_superHeroName),
-          ),
-          body: Center(
-            child: Image.network('https://picsum.photos/1080/1920')
-          ),
-        );
-      })
-    );
+    Navigator.of(context)
+        .push(MaterialPageRoute<void>(builder: (BuildContext context) {
+      final _superHeroName = superHeroName;
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(_superHeroName),
+        ),
+        body:
+            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Image.network('https://picsum.photos/64/64'),
+            Image.network('https://picsum.photos/64/64'),
+            Image.network('https://picsum.photos/64/64'),
+          ]),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Text(_superHeroName),
+            Text(_superHeroName),
+            Text(_superHeroName),
+          ]),
+        ]),
+      );
+    }));
   }
 }
