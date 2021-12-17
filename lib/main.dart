@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:postgres/postgres.dart';
 import 'package:super_hero/super_hero.dart';
-// Kommentar
+
 
 void main() => runApp(OHDMEditor());
 
