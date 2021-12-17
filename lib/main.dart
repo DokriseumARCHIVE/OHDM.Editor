@@ -85,19 +85,21 @@ class _SuperHeroName extends State<SuperHeroNameGenerator> {
         appBar: AppBar(
           title: Text(_superHeroName),
         ),
-        body:
-            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            Image.network('https://picsum.photos/64/64'),
-            Image.network('https://picsum.photos/64/64'),
-            Image.network('https://picsum.photos/64/64'),
-          ]),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            Text(_superHeroName),
-            Text(_superHeroName),
-            Text(_superHeroName),
-          ]),
-        ]),
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                Image.network('https://picsum.photos/64/64'),
+                Image.network('https://picsum.photos/64/64'),
+                Image.network('https://picsum.photos/64/64'),
+              ]),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                Text(_superHeroName),
+                Text(_superHeroName),
+                Text(_superHeroName),
+              ]),
+            ]),
       );
     }));
   }
