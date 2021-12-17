@@ -37,7 +37,7 @@ class SuperHeroName extends State<SuperHeroNameGenerator> {
     List<String> myNames = [];
 
     for (int index = 0; index <= 10; index++) {
-      myNames.add(SuperHero.random());
+      myNames.add(index.toString() + " " + SuperHero.random());
     }
 
     return myNames;
